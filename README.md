@@ -1,4 +1,4 @@
-# Ruepelli Really syllabus
+# Ruepellii Really syllabus
 
 The Really class is the 2018S04 (that is the 4rd semester of GreenFoxAcademy (GFA) 2018 academic year) starting Oct 24th 2018 and ending, March 8th 2019. The technical stack for this class covers:
 
