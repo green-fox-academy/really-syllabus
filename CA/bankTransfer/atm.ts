@@ -5,8 +5,6 @@
 // and we have a bunch of users
 // ATM has a password, money, and a hasenoughMoney method
 // adminUser has a password, and a deposit method(he can only deposit to the ATM now)
-// userToDo has checkpassword method, a checkbankcardnumber method
-// a withdraw, a checkhowmoney, and checkcash method
 
 // pls use exception handling, avoid code duplicates, and do everything with ES6 (if it's possible)
 
@@ -35,8 +33,33 @@ const adminUser = {
   }
 }
 
+const userToDo = {
+  checkPassword: (password: number, bankCardNumber: number) => {
+    const userInfo = userToDo.checkBankCardNumber(bankCardNumber);
+    if (userInfo === undefined) {
+      throw 'Wrong bankcardnumber';
+    } else if(userInfo.password !== password) {
+      throw 'Wrong password';
+    } else {
+      return userInfo;
+    }
+  },
+  checkBankCardNumber: (bankCardNumber: number) => {
+    return users.find(data => data.bankcardnumber === bankCardNumber);
+  },
+  withdraw: (cash: number) => {
+
+  },
+  checkHowMoney: () => {}
+}
+
+// userToDo has checkpassword method
+// a checkbankcardnumber method
+// a withdraw, a checkhowmoney, and checkcash method
+
 try {
   adminUser.deposit(1000);
+  userToDo.checkPassword(1000, 1234123412341234);
   console.log(ATM.money);
 } catch(e) {
   console.log(e);
