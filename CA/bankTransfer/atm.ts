@@ -16,3 +16,28 @@ const users = [
   {name: "Cica", bankcardnumber: 1234123412341236, password: 1002, money: 1000},
   {name: "Macska", bankcardnumber: 1234123412341237, password: 1003, money: 1000},
 ];
+
+const ATM = {
+  password: 1234,
+  money: 2000,
+  hasEnoughMoney: () => {
+  }
+}
+
+const adminUser = {
+  password: 1234,
+  deposit: (cash: number) => {
+    if (ATM.password === adminUser.password) {
+      ATM.money += cash;
+    } else {
+      throw 'Passwords are incorrect';
+    }
+  }
+}
+
+try {
+  adminUser.deposit(1000);
+  console.log(ATM.money);
+} catch(e) {
+  console.log(e);
+}
