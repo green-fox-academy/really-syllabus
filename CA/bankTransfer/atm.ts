@@ -18,7 +18,8 @@ const users = [
 const ATM = {
   password: 1234,
   money: 2000,
-  hasEnoughMoney: () => {
+  hasEnoughMoney: (cash: number) => {
+    return ATM.money - cash >= 0;
   }
 }
 
@@ -49,18 +50,25 @@ const userToDo = {
   },
   withdraw: (cash: number, password: number, bankCardNumber: number) => {
     const user = userToDo.checkPassword(password, bankCardNumber);
-    if(user) {
+    if (ATM.hasEnoughMoney(cash) && user && userToDo.checkCash(cash, user)) {
       user.money -= cash;
       ATM.money -= cash;
+    } else if(!ATM.hasEnoughMoney(cash)) {
+      throw 'ATM NO MONEYMONEYMONEY';
+    } else if (!userToDo.checkCash(cash, user)) {
+      throw `${user.name} NO MONEYMONEYMONEY`;
     }
   },
-  checkHowMoney: (password: number, bankCardNumber: number) => { 
+  checkHowMoney: (password: number, bankCardNumber: number) => {
     const user = userToDo.checkPassword(password, bankCardNumber);
-    if(user) {
+    if (user) {
       return user.money;
     } else {
       throw 'something went wrong';
     }
+  },
+  checkCash: (cash: number, user: any) => {
+    return user.money - cash >= 0;
   }
 }
 
@@ -70,8 +78,8 @@ const userToDo = {
 
 try {
   // adminUser.deposit(1000);
-  userToDo.withdraw(1000, 1000, 1234123412341234);
-  console.log(userToDo.checkHowMoney(1000, 1234123412341234));
+  userToDo.withdraw(2000, 1000, 1234123412341234);
+  console.log(users);
 } catch (e) {
   console.log(e);
 }
