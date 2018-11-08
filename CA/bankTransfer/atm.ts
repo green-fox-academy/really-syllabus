@@ -9,10 +9,10 @@
 // pls use exception handling, avoid code duplicates, and do everything with ES6 (if it's possible)
 
 const users = [
-  {name: "Béla", bankcardnumber: 1234123412341234, password: 1000, money: 1000},
-  {name: "Béci", bankcardnumber: 1234123412341235, password: 1001, money: 1000},
-  {name: "Cica", bankcardnumber: 1234123412341236, password: 1002, money: 1000},
-  {name: "Macska", bankcardnumber: 1234123412341237, password: 1003, money: 1000},
+  { name: "Béla", bankcardnumber: 1234123412341234, password: 1000, money: 1000 },
+  { name: "Béci", bankcardnumber: 1234123412341235, password: 1001, money: 1000 },
+  { name: "Cica", bankcardnumber: 1234123412341236, password: 1002, money: 1000 },
+  { name: "Macska", bankcardnumber: 1234123412341237, password: 1003, money: 1000 },
 ];
 
 const ATM = {
@@ -36,9 +36,9 @@ const adminUser = {
 const userToDo = {
   checkPassword: (password: number, bankCardNumber: number) => {
     const userInfo = userToDo.checkBankCardNumber(bankCardNumber);
-    if (userInfo === undefined) {
+    if (!userInfo) {
       throw 'Wrong bankcardnumber';
-    } else if(userInfo.password !== password) {
+    } else if (userInfo.password !== password) {
       throw 'Wrong password';
     } else {
       return userInfo;
@@ -47,10 +47,21 @@ const userToDo = {
   checkBankCardNumber: (bankCardNumber: number) => {
     return users.find(data => data.bankcardnumber === bankCardNumber);
   },
-  withdraw: (cash: number) => {
-
+  withdraw: (cash: number, password: number, bankCardNumber: number) => {
+    const user = userToDo.checkPassword(password, bankCardNumber);
+    if(user) {
+      user.money -= cash;
+      ATM.money -= cash;
+    }
   },
-  checkHowMoney: () => {}
+  checkHowMoney: (password: number, bankCardNumber: number) => { 
+    const user = userToDo.checkPassword(password, bankCardNumber);
+    if(user) {
+      return user.money;
+    } else {
+      throw 'something went wrong';
+    }
+  }
 }
 
 // userToDo has checkpassword method
@@ -58,9 +69,9 @@ const userToDo = {
 // a withdraw, a checkhowmoney, and checkcash method
 
 try {
-  adminUser.deposit(1000);
-  userToDo.checkPassword(1000, 1234123412341234);
-  console.log(ATM.money);
-} catch(e) {
+  // adminUser.deposit(1000);
+  userToDo.withdraw(1000, 1000, 1234123412341234);
+  console.log(userToDo.checkHowMoney(1000, 1234123412341234));
+} catch (e) {
   console.log(e);
 }
