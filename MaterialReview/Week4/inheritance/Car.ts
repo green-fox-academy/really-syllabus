@@ -1,5 +1,3 @@
-import { BMW } from './Bmw';
-import { Tesla } from './Tesla';
 import { Vehicle } from './vehicle';
 
 export class Car extends Vehicle {
