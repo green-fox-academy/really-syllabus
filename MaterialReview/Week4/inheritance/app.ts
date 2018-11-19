@@ -1,21 +1,19 @@
-class Person {
-  name: string;
-  age: number;
-  constructor(name: string, age: number) {
-    this.name = name;
-    this.age = age;
-    console.log(`Person constructor: ${this.name}, ${this.age}`);
+import { Tesla } from './Tesla';
+import { BMW } from './Bmw';
+import { Car } from './Car';
+
+let bmw = new BMW('red', 'benzines', 'bmw', 'faszagyerek');
+let tesla = new Tesla('red',  'elektromos', 'tesla', 'elon musk');
+
+console.log(bmw.getEngine());
+console.log(tesla.getEngine());
+
+const checkType = (car: Car) => {
+  if (car instanceof BMW) {
+    return 'szep auto vagyok'
+  } else if (car instanceof Tesla) {
+    return 'elektromos vagyok';
   }
 }
 
-class Mentor extends Person {
-  type: string;
-  constructor(name: string, age: number, type: string) {
-    super(name, age);
-    this.type = type;
-    console.log(`Mentor constructor: ${this.name}, ${this.age}, ${this.type}`);
-  }
-}
-
-let p = new Person('Szirmi', 50);
-let m = new Mentor('Bence', 60, 'mentor');
+console.log(checkType(tesla));
