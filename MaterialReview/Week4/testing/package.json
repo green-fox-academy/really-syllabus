@@ -1,0 +1,14 @@
+{
+  "name": "really-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "testing.js",
+  "devDependencies": {
+    "tape": "^4.9.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
