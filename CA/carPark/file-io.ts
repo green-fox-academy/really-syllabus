@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-function readFromFile(fileName: string): string {
+export function readFromFile(fileName: string): string {
   try {
     return fs.readFileSync(fileName, 'utf-8');
   } catch(e) {
@@ -9,7 +9,7 @@ function readFromFile(fileName: string): string {
   }
 }
 
-function writeToFile(fileName: string, content: string): void {
+export function writeToFile(fileName: string, content: string): void {
   if(fs.existsSync(fileName)) {
     fs.writeFileSync(fileName, content);
   } else {
@@ -17,5 +17,10 @@ function writeToFile(fileName: string, content: string): void {
   }
 }
 
-writeToFile('README.md', 'kiskutya');
-console.log(readFromFile('cars.csv'));
+export function appendToFile(fileName: string, content: string): void {
+  if(fs.existsSync(fileName)) {
+    fs.appendFileSync(fileName, content);
+  } else {
+    console.log('cant write to file');
+  }
+}
