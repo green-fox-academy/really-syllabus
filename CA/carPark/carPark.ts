@@ -36,7 +36,7 @@ class CarPark {
       content.split('\r\n').forEach(e => {
         array.push(e.split(','));
       });
-      
+
       let index = 0;
       let smallest = 9999;
       array.forEach((e, i) => {
@@ -48,6 +48,19 @@ class CarPark {
       });
       return array[index][0];
     }
+  }
+
+  getPenalty(fileName: string) {
+    let content = readFromFile(fileName);
+    let noParkingTicket: string[] = [];
+    if (content !== null) {
+      content.split('\r\n').forEach(e => {
+        if(e.split(',')[2] === '0') {
+          noParkingTicket.push(e.split(',')[0]);
+        }
+      });
+    }
+    return noParkingTicket;
   }
 }
 
@@ -63,4 +76,5 @@ myCarPark.addCar(myCar2);
 // console.log(myCarPark.getMyCars());
 // myCarPark.addCarToFile(myCar);
 
-console.log(myCarPark.getOldest('cars.csv'));
+// console.log(myCarPark.getOldest('cars.csv'));
+console.log(myCarPark.getPenalty('cars.csv'));
