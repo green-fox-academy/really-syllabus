@@ -4,8 +4,10 @@
 
 ## File-IO
 
- - `readFromFile()` method with a fileName parameter, which returns the fileContent, and handle the errors
- - `writeToFile()` method which handles the fileWrite, and cheks if the file exists or not
+ - `readFromFile()` method with a fileName parameter
+ - it should return the fileContent, and handle the errors
+ - `writeToFile()` method which with 2 parameter: fileName and content
+ - it should handle the filewriting, and checks if the file exists or not
 
 ## Car
 
