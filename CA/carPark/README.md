@@ -17,7 +17,7 @@
 
  - it should have a `carPark` array of Cars
  - `addCar()` method which add's a new car to the carPark
- - `addCarToFile()` method which add's a new car to the cars.csv, with 3 parameter: license plate, year of manufacture, and a parking ticket(0 or 1)
+ - `addCarToFile()` method which add's a new car to the [file](./cars.csv), with 3 parameter: license plate, year of manufacture, and a parking ticket(0 or 1)
  - `removeCar()` method which removes a car, by ID
- - `getOldest()` method which returns the oldest car's license plate from cars.csv
- - `getPenalty()` method which returns a new array of car's who hasn't got a parking ticket from cars.csv
+ - `getOldest()` method which returns the oldest car's license plate from the [file](./cars.csv)
+ - `getPenalty()` method which returns a new array of car's who hasn't got a parking ticket from the [file](./cars.csv)
