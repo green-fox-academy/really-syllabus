@@ -1,0 +1,15 @@
+.red {
+  color: red;
+  font-size: 60px;
+}
+
+.visible {
+  display: none
+}
+
+button {
+  background: palegreen;
+  width: 400px;
+  height: 100px;
+  font-size: 35px;
+}
