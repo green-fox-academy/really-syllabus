@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CA Form</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="root">
+    <div id="left">
+        <form id="postForm" name="postForm" method="POST">
+          <div class="form-elem">
+            <label for="title">Cím</label>
+            <input type="text" id="title" name="title">
+          </div>
+          <div class="form-elem">
+            <label for="body">Szövegtörzs</label>
+            <textarea id="body" name="body"></textarea>
+          </div>
+          <button id="sendButton" type="button">Küldés</button>
+        </form>
+      </div>
+    <div id="right"><div id="posts"></div>
+  </div>
+  <script src="./main.js" type="text/javascript"></script>
+</body>
+</html>
