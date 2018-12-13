@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MR Form</title>
+  <style>
+    label {
+      display: inline-block;
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <form method="POST" action="index.html" name="MRForm" onsubmit="return validate()">
+      <div class="form-input">
+        <label for="name_input">Név</label>
+        <input type="text" id="name_input" name="name" maxlength="5">
+      </div>
+      <div class="form-input">
+        <label for="password_input">Jelszó</label>
+        <input type="password" id="password_input" name="password" required>
+      </div>
+      <div class="form-input">
+        <label for="email_input">Email</label>
+        <input type="email" id="email_input" name="email" placeholder="hello@example.com">
+      </div>
+      <div class="form-input">
+        <label for="age_input">Kor</label>
+        <input type="number" id="age_input" name="age" min="18" max="90" value="4">
+      </div>
+      <div class="form-input">
+        <label for="birthday_input">Szülinap</label>
+        <input type="date" id="birthday_input" name="birthday" autofocus>
+      </div>
+      <div class="form-input">
+        <input type="radio" id="radio1_input" name="gender" value="female">
+        <label for="radio1_input">Nő</label>
+        <input type="radio" id="radio2_input" name="gender" value="male">
+        <label for="radio2_input">Férfi</label>
+      </div>
+      <div class="form-input">
+        <label for="message_textarea">Üzenet</label>
+        <textarea id="message_textarea" name="message" required></textarea>
+      </div>
+      <div class="form-input">
+        <label for="eye_input">Szemszín</label>
+        <input type="color" id="eye_input" name="eye">
+      </div>
+      <div class="form-input">
+        <label for="foot_input">Lábméret</label>
+        <input type="range" id="foot_input" name="foot" min="35" max="48" step="0.5">
+      </div>
+      <div class="form-input">
+        <input type="checkbox" id="chbox1_input" name="tsjs" value="typescript">
+        <label for="chbox1_input">TypeScript</label>
+        <input type="checkbox" id="chbox2_input" name="tsjs" value="javascript">
+        <label for="chbox2_input">JavaScript</label>
+      </div>
+      <div class="form-button">
+          <button type="button" onclick="logFormValues()">Űrlapmezők értékei</button>
+          <button type="submit">Küldés</button>
+      </div>
+    </form>
+    <div id="result">
+      <table id="result_table"></table>
+    </div>
+  </div>
+  <script src="./main.js" type="text/javascript"></script>
+</body>
+</html>
