@@ -1,0 +1,27 @@
+Media query
+
+@media screen and (max-width: 992px) {
+  body {
+	background-color: blue;
+  }
+}
+Hover
+
+Gradient
+#grad {
+  background-image: linear-gradient(red, yellow);
+}
+
+
+COLORS: 
+additive 
+- HEX
+ rgb(a), 
+Subtractive 
+- HSL = hue saturation lightness 
+
+
+Boxshadow: https://www.cssmatic.com/box-shadow
+Children nth
+
+Nth child
