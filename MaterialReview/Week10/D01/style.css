@@ -32,6 +32,34 @@ th {
   text-shadow: 4px 4px 2px rgb(26, 1, 1);
 }
 
+tbody>tr>td:first-of-type + td {
+  background: green;
+}
+
+th[data] {
+  background: purple;
+}
+
+/* phone */
+
+@media screen and (max-width: 400px) {
+  tr>td:nth-child(n+4) {
+    display: none;
+  }
+  tr>th:nth-child(n+4) {
+    display: none;
+  }
+}
+
+/* tablet */
+@media screen and (max-width: 500px) {
+  tr>td:nth-child(n+5) {
+    display: none;
+  }
+  tr>th:nth-child(n+5) {
+    display: none;
+  }
+}
 
 
 /* tr::before {
