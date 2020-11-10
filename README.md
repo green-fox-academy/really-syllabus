@@ -24,3 +24,9 @@ The course consists of 3 distinct phases:
 - Basics - introducing the foundations of software development and studying HTML, CSS, TypeScript
 - Orientation - introducing the foundations of software development and studying HTML, CSS, JavaScript
 - Project - We form working groups that are working independently with mentor supervision on a lifelike project.
+
+## Fork Test
+
+- new branch
+- new commit
+- new pr
